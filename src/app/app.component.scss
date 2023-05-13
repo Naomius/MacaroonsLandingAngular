@@ -401,55 +401,6 @@
   width: 294px;
 }
 
-.footer {
-  padding: 73px 0 62px;
-  background-color: #c0707c;
-}
-
-.footer .container {
-  max-width: 1140px;
-  margin: 0 auto;
-}
-
-.footer__wrapper {
-  display: flex;
-  align-items: center;
-}
-
-.footer__logo-rights {
-  width: 162px;
-  margin-right: 343px;
-}
-
-.footer__rights {
-  margin-top: 19px;
-  font-size: 12px;
-  font-family: GilroyRegular, sans-serif;
-  color: rgb(227, 172, 180);
-}
-
-.footer__social {
-  text-align: center;
-  margin-right: 356px;
-}
-
-.footer__social-instagram {
-  margin-bottom: 15px;
-}
-
-.footer__social-text {
-  text-align: center;
-  font-size: 16px;
-  font-family: GilroyBold, sans-serif;
-  color: rgb(255, 255, 255);
-}
-
-.footer__phone a {
-  text-decoration: none;
-  font-size: 16px;
-  font-family: GilroyBold, sans-serif;
-  color: rgb(255, 255, 255);
-}
 
 .displayNone {
   display: none;
@@ -538,9 +489,6 @@
     max-width: 412px;
   }
 
-  .footer .footer__social {
-    margin-right: 200px;
-  }
 }
 
 @media screen and (max-width: 1029px) {
@@ -585,19 +533,7 @@
   /*    margin-bottom: 80px;*/
   /*    text-align: center;*/
   /*}*/
-
-  .footer .footer__wrapper {
-    justify-content: space-between;
-  }
-
-  .footer .footer__logo-rights {
-    width: 162px;
-    margin-right: 0;
-  }
-
-  .footer .footer__social {
-    margin-right: 0;
-  }
+}
 
   @media screen and (max-width: 991px) {
 
@@ -785,15 +721,6 @@
 
     body .footer__wrapper {
       align-items: baseline;
-    }
-
-    .footer .footer__logo-rights {
-      margin-right: 0;
-      align-self: center;
-    }
-
-    .footer .footer__social {
-      margin-right: 0;
     }
 
     .button__fixed .button__fixed-border {
@@ -999,48 +926,8 @@
     .order .order__action .order-button {
       width: 344px;
     }
-
-    body .footer {
-      padding: 50px 0 101px;
-    }
-
-    .footer .footer__wrapper {
-      display: flex;
-      flex-direction: column;
-      margin: 0;
-      padding: 0;
-      text-align: center;
-      align-items: center;
-      gap: 40px;
-    }
-
-    .footer .logo {
-      margin-right: 0;
-
-    }
-
-    .footer .footer__logo-rights {
-      margin-right: 0;
-      order: 1;
-      position: relative;
-
-    }
-
-    .footer .footer__rights {
-      position: absolute;
-      top: 205px;
-    }
-
-    .footer .footer__social {
-      margin-right: 0;
-      order: 3;
-    }
-
-    .footer .footer__phone {
-      order: 2;
-    }
   }
-}
+
 
 @media screen and (max-width: 363px) {
   .order .order__action .input__transparent {

@@ -75,5 +75,4 @@ export class AppComponent {
 
    showPresent = true;
 
-  hrefInstagram = 'https://google.com'
 }
