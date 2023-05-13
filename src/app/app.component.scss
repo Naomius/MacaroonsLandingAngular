@@ -1,70 +1,4 @@
 
-.header-main__background {
-  background-color: #eba8b1;
-  overflow: hidden;
-}
-
-.header {
-
-  padding: 38px 0 25px;
-}
-
-.header .container {
-  max-width: 1140px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.logo {
-  margin-right: 227px;
-}
-
-.logo a {
-  font-size: 18px;
-  color: rgb(255, 255, 255);
-  text-transform: uppercase;
-  text-decoration: none;
-}
-
-.menu ul {
-  display: flex;
-}
-
-.menu ul li {
-  list-style: none;
-  padding-bottom: 3px;
-  border-bottom: 2px solid transparent;
-  transition: 800ms ease;
-}
-
-.menu ul li:hover {
-  border-bottom: 2px solid #821328;
-  transition: 800ms ease;
-}
-
-.menu ul li:not(:last-child) {
-  margin-right: 40px;
-}
-
-.menu ul li a {
-  text-decoration: none;
-  font-size: 14px;
-  font-family: GilroyMedium, sans-serif;
-  color: rgb(119, 11, 29);
-}
-
-.contact {
-  margin-left: 328px;
-}
-
-.contact a {
-  text-decoration: none;
-  font-size: 16px;
-  font-family: GilroyBold, sans-serif;
-  color: rgb(255, 255, 255);
-}
 
 .main {
   padding: 126px 0 108px;
@@ -598,28 +532,7 @@
 
 }
 
-.burger {
-  display: none;
-}
-
-.close {
-  display: none;
-}
-
-
 @media screen and (max-width: 1229px) {
-  .container {
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-
-  body .header .container {
-    justify-content: space-between;
-  }
-
-  .header .contact {
-    margin-left: 200px;
-  }
 
   .main .main__image {
     max-width: 412px;
@@ -631,18 +544,6 @@
 }
 
 @media screen and (max-width: 1029px) {
-
-  body .header .container {
-    justify-content: space-between;
-  }
-
-  .header .logo {
-    margin-right: 0;
-  }
-
-  .header .contact {
-    margin-left: 0;
-  }
 
   body .main {
     padding: 75px 0 219px;
@@ -699,22 +600,6 @@
   }
 
   @media screen and (max-width: 991px) {
-
-    body .header {
-      padding-top: 38px;
-    }
-
-    .header .logo {
-      margin-right: 103px;
-    }
-
-    body .header .container {
-      justify-content: left;
-    }
-
-    .header .contact {
-      display: none;
-    }
 
     body .main .container {
       display: inline-block;
@@ -789,22 +674,6 @@
 
 
   @media screen and (max-width: 768px) {
-
-    body .header {
-      padding-top: 38px;
-    }
-
-    .header .logo {
-      margin-right: 103px;
-    }
-
-    body .header .container {
-      justify-content: left;
-    }
-
-    .header .contact {
-      display: none;
-    }
 
     body .main .container {
       display: inline-block;
@@ -976,83 +845,6 @@
   }
 
   @media screen and (max-width: 547px) {
-    body .header .container {
-      justify-content: space-between;
-    }
-
-    body .menu {
-      /*display: none;*/
-    }
-
-    body .main-image {
-      width: 100%;
-    }
-
-    body .header .menu ul {
-      width: 350px;
-    }
-
-    body .header .menu {
-      position: fixed;
-      width: 100%;
-      height: 100%;
-      margin: 0;
-      right: 0;
-      top: -100%;
-      background: rgb(235 168 174);
-      transition: 0.5s;
-    }
-
-    body .header .menu ul {
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      margin: 100px auto;
-      gap: 16px;
-    }
-
-    body .header .menu ul a {
-      color: #ffefef;
-      font-size: 35px;
-    }
-
-    body .header .menu ul li {
-      margin-right: 0;
-    }
-
-
-    body .header .menu-item {
-      margin: 15px 0;
-    }
-
-    body .header .burger {
-      display: block;
-
-    }
-
-    body .header .burger svg {
-      width: 36px;
-      height: 36px;
-      fill: #fad7a7;
-      margin-right: 20px;
-    }
-
-    body .menu.open {
-      display: flex;
-      /*align-items: center;*/
-      z-index: 5;
-      top: 0;
-    }
-
-    body .menu .close {
-      display: block;
-      width: 24px;
-      height: 24px;
-      fill: rgb(255 255 255);
-      position: absolute;
-      top: 30px;
-      right: 21px;
-    }
 
     .products .products__image {
       position: absolute;

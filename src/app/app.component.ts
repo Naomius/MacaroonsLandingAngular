@@ -75,7 +75,5 @@ export class AppComponent {
 
    showPresent = true;
 
-   headerPhoneNumber = '+8 (894) 568-945-56';
-
   hrefInstagram = 'https://google.com'
 }

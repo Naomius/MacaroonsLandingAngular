@@ -32,3 +32,14 @@ body {
   font-family: Tavolga, sans-serif;
 }
 
+.header-main__background {
+  background-color: #eba8b1;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 1229px) {
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
