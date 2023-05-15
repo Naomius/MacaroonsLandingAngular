@@ -29,13 +29,13 @@
         </div>
         <ul>
           <li>
-            <a (click)="scrollTo(productsElement)">Пироженки</a>
+            <a href="javascript:void(0)" (click)="scrollTo(productsElement)">Пироженки</a>
           </li>
           <li>
-            <a (click)="scrollTo(advantagesElements)">О нас</a>
+            <a href="javascript:void(0)" (click)="scrollTo(advantagesElements)">О нас</a>
           </li>
           <li>
-            <a (click)="scrollTo(orderElement)">Оформить заказ</a>
+            <a href="javascript:void(0)" (click)="scrollTo(orderElement)">Оформить заказ</a>
           </li>
         </ul>
       </nav>
@@ -162,7 +162,7 @@
     </div>
   </div>
 </footer>
-<div class="button__fixed" *ngIf="showPresent === true">
+<div class="button__fixed" *ngIf="showPresent">
   <div class="wrapper">
     <button class="button__fixed-border">
       <img src="assets/image/present1.png" alt="present">
