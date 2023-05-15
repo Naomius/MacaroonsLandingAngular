@@ -29,13 +29,13 @@
         </div>
         <ul>
           <li>
-            <a href="#">Пироженки</a>
+            <a (click)="scrollTo(productsElement)">Пироженки</a>
           </li>
           <li>
-            <a href="#">О нас</a>
+            <a (click)="scrollTo(advantagesElements)">О нас</a>
           </li>
           <li>
-            <a href="#">Оформить заказ</a>
+            <a (click)="scrollTo(orderElement)">Оформить заказ</a>
           </li>
         </ul>
       </nav>
@@ -59,7 +59,7 @@
     </div>
   </main>
 </div>
-<section class="advantages">
+<section class="advantages" #advantagesElements>
   <div class="container">
     <div class="advantages__grid">
       <div class="advantages__description-h2">
@@ -77,8 +77,8 @@
       </div>
     </div>
     <div class="advantages__items">
-      <div class="advantages__items-one" *ngFor="let advantages of advantages">
-        <div class="advantages__items-number">{{advantages.number}}</div>
+      <div class="advantages__items-one" *ngFor="let advantages of advantages; let i = index">
+        <div class="advantages__items-number">{{i+1}}</div>
         <div class="advantages__items-text">{{advantages.title}}</div>
         <div class="advantages__items-p">{{advantages.description}}</div>
       </div>
@@ -131,7 +131,7 @@
           <input type="text" class="input__transparent" placeholder="+375 (__) ___ - __ - __" [(ngModel)]="formValues.phone">
         </div>
         <div class="order__action">
-          <button class="button order-button">Оформить заказ</button>
+          <button class="button order-button" (click)="creatOrder()">Оформить заказ</button>
         </div>
       </div>
     </div>
@@ -162,7 +162,7 @@
     </div>
   </div>
 </footer>
-<div class="button__fixed" [class]="showPresent === true ? 'displayBlock' : 'displayNone'">
+<div class="button__fixed" *ngIf="showPresent === true">
   <div class="wrapper">
     <button class="button__fixed-border">
       <img src="assets/image/present1.png" alt="present">

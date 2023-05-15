@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {AdvantagesType} from "./types/advantages.type";
 import {ProductsType} from "./types/products.type";
+import {FormValuesType} from "./types/form-values.type";
 
 @Component({
   selector: 'app-root',
@@ -8,6 +9,19 @@ import {ProductsType} from "./types/products.type";
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
+  showPresent = true;
+
+  headerPhoneNumber = '+8 (894) 568-945-56';
+
+  hrefInstagram = 'https://google.com'
+
+  public formValues: FormValuesType = {
+    productTitle: '',
+    name: '',
+    phone: '',
+  }
+
   public advantages: AdvantagesType[] = [
     {
       number: 1,
@@ -58,11 +72,6 @@ export class AppComponent {
     },
   ]
 
-  public formValues = {
-    productTitle: '',
-    name: '',
-    phone: '',
-  }
 
   public scrollTo(target: HTMLElement): void {
     target.scrollIntoView({behavior: "smooth"});
@@ -73,9 +82,26 @@ export class AppComponent {
     this.formValues.productTitle = product.title.toUpperCase()
   }
 
-   showPresent = true;
+  public creatOrder() {
+    if (!this.formValues.productTitle) {
+      alert('Заполните поле Пицца')
+      return;
+    }
+    if (!this.formValues.name) {
+      alert('Заполните поле имя')
+      return;
+    }
+    if (!this.formValues.phone) {
+      alert('Введите номер телефона')
+      return;
+    }
+    alert('Спасибо за заказ!');
 
-   headerPhoneNumber = '+8 (894) 568-945-56';
+    this.formValues = {
+      productTitle: '',
+      name: '',
+      phone: '',
+    }
+  }
 
-  hrefInstagram = 'https://google.com'
 }
