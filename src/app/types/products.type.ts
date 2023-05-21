@@ -1,6 +1,6 @@
 export type ProductsType = {
   title: string,
   count: string,
-  price: string,
+  price: number,
   image: string
 }

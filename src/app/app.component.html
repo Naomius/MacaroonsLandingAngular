@@ -40,7 +40,7 @@
         </ul>
       </nav>
       <div class="contact">
-        <a href="#">{{headerPhoneNumber}}</a>
+        <a href="#">{{headerPhoneNumber | editedPhoneNumber}}</a>
       </div>
     </div>
   </header>
@@ -50,7 +50,7 @@
         <h1>Мягкие французские пироженки Macaroons</h1>
         <p>Побалуйте себя и своих близких самыми вкусными и ароматными домашними пироженками Macaroon!</p>
         <div class="main__action">
-          <button class="button" (click)="scrollTo(productsElement)">Выбрать макарун</button>
+          <button class="button" (click)="scrollTo(productsElement)" ButtonBackground>Выбрать макарун</button>
         </div>
       </div>
       <div class="main__image">
@@ -77,11 +77,7 @@
       </div>
     </div>
     <div class="advantages__items">
-      <div class="advantages__items-one" *ngFor="let advantages of advantages; let i = index">
-        <div class="advantages__items-number">{{i+1}}</div>
-        <div class="advantages__items-text">{{advantages.title}}</div>
-        <div class="advantages__items-p">{{advantages.description}}</div>
-      </div>
+      <advantages *ngFor="let advantages of advantages" [advantages]="advantages"></advantages>
     </div>
   </div>
 </section>
@@ -89,21 +85,7 @@
   <div class="container">
     <h2>Выберите свой макарун</h2>
     <div class="products__items">
-      <div class="products__items-item" *ngFor="let product of products; let i = index">
-        <div class="products__items-item-text">{{product.title}}</div>
-        <div class="products__items-item-price-action">
-          <div class="products__items-item-price">
-            <div class="item-price__count">{{product.count}}</div>
-            <div class="item-price__price">{{product.price}}</div>
-          </div>
-          <div class="products__items-item-action">
-            <button class="button products__button" (click)="addToCart(product, orderElement)">Заказать</button>
-          </div>
-        </div>
-        <div class="products__image">
-          <img src="assets/image/{{product.image}}" alt="Product makaroon {{i+1}}">
-        </div>
-      </div>
+      <products *ngFor="let product of products" [products]="product" (addToCartEvent)="addToCart($event, orderElement)"></products>
     </div>
 
   </div>
@@ -131,7 +113,7 @@
           <input type="text" class="input__transparent" placeholder="+375 (__) ___ - __ - __" [(ngModel)]="formValues.phone">
         </div>
         <div class="order__action">
-          <button class="button order-button" (click)="creatOrder()">Оформить заказ</button>
+          <button class="button order-button" (click)="creatOrder()" ButtonBackground>Оформить заказ</button>
         </div>
       </div>
     </div>
@@ -157,7 +139,7 @@
         </div>
       </div>
       <div class="footer__phone">
-        <a href="#">{{headerPhoneNumber}}</a>
+        <a href="#">{{headerPhoneNumber | editedPhoneNumber}}</a>
       </div>
     </div>
   </div>
@@ -165,12 +147,11 @@
 <div class="button__fixed" *ngIf="showPresent">
   <div class="wrapper">
     <button class="button__fixed-border">
-      <img src="assets/image/present1.png" alt="present">
+      <img src="assets/image/cart.png" alt="present">
+    <div class="button__fixed-count">{{cartProductServices.count}}</div>
     </button>
     <div class="button__fixed-text">
-      <span>Оформите заказ!</span>
-      <div></div>
-      <span>и получите подарок!</span>
+      {{cartProductServices.price | currency:'RU':'руб':'1.1-2':'fr'}}
     </div>
   </div>
 </div>

@@ -1,20 +1,35 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {AdvantagesType} from "./types/advantages.type";
 import {ProductsType} from "./types/products.type";
 import {FormValuesType} from "./types/form-values.type";
+import {ProductService} from "./services/product.service";
+import {CartProductService} from "./services/cart-product.service";
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  providers: [CartProductService, ProductService]
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
+
+  products: ProductsType[] = this.productService.getProducts();
 
   showPresent = true;
 
-  headerPhoneNumber = '+8 (894) 568-945-56';
+  headerPhoneNumber = '375293689868';
 
-  hrefInstagram = 'https://google.com'
+  hrefInstagram = 'https://google.com';
+
+
+  constructor(public productService: ProductService,
+              public cartProductServices: CartProductService) {
+  }
+
+  ngOnInit() {
+    this.products = this.productService.getProducts()
+  }
+
 
   public formValues: FormValuesType = {
     productTitle: '',
@@ -45,41 +60,17 @@ export class AppComponent {
     },
   ];
 
-  public products: ProductsType[] = [
-    {
-      title: 'Макарун с малиной',
-      count: '1 шт.',
-      price: '1,70 руб',
-      image: 'red.png'
-    },
-    {
-      title: 'Макарун с манго',
-      count: '1 шт.',
-      price: '1,70 руб',
-      image: 'yellow.png'
-    },
-    {
-      title: 'Пирог с ванилью',
-      count: '1 шт.',
-      price: '1,70 руб',
-      image: 'white.png'
-    },
-    {
-      title: 'Пирог с фисташками',
-      count: '1 шт.',
-      price: '1,70 руб',
-      image: 'green.png'
-    },
-  ]
-
 
   public scrollTo(target: HTMLElement): void {
     target.scrollIntoView({behavior: "smooth"});
   }
 
   public addToCart(product: ProductsType, target: HTMLElement): void {
+    this.cartProductServices.price++;
+    this.cartProductServices.count++;
     this.scrollTo(target);
     this.formValues.productTitle = product.title.toUpperCase()
+    alert(`${this.formValues.productTitle}, добавлен в корзину`)
   }
 
   public creatOrder() {

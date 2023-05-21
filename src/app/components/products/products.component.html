@@ -1,0 +1,17 @@
+<div class="products__items-item">
+  <div class="products__items-item-text">{{products.title}}</div>
+  <div class="products__items-item-price-action">
+    <div class="products__items-item-price">
+      <div class="item-price__count">{{products.count}}</div>
+      <div class="item-price__price">{{ products.price | currency:'RU':'руб':'1.1-2':'fr' }}</div>
+    </div>
+    <div class="products__items-item-action">
+      <button class="button products__button" ButtonBackground (click)="addProductToCart()">Заказать</button>
+    </div>
+  </div>
+  <div class="products__image">
+    <img src="assets/image/{{products.image}}" alt="Product makaroon">
+  </div>
+</div>
+
+<!--(click)="addToCart(products, orderElement)"-->
