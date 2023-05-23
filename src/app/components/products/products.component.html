@@ -2,8 +2,8 @@
   <div class="products__items-item-text">{{product.title}}</div>
   <div class="products__items-item-price-action">
     <div class="products__items-item-price">
-      <div class="item-price__count">{{product.count | productCountPipe}}</div>
-      <div class="item-price__price">{{ product.price | customPricePipe}}</div>
+      <div class="item-price__count">{{product.count | customPricePipe: ' шт.'}}</div>
+      <div class="item-price__price">{{ product.price | customPricePipe: ' руб.'}}</div>
     </div>
     <div class="products__items-item-action">
       <button class="button products__button" ButtonBackground (click)="addProductToCart()">Заказать</button>
@@ -14,5 +14,4 @@
   </div>
 </div>
 
-<!--(click)="addToCart(products, orderElement)"-->
 <!--  currency:'RU':'руб':'1.1-2':'fr'  -->

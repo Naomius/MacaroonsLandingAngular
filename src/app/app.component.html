@@ -151,7 +151,7 @@
     <div class="button__fixed-count" *ngIf="cartProductServices.count">{{cartProductServices.count}}</div>
     </button>
     <div class="button__fixed-text" *ngIf="cartProductServices.price">
-      {{cartProductServices.price | customPricePipe}}
+      {{cartProductServices.price | customPricePipe: ' руб.'}}
     </div>
   </div>
 </div>
