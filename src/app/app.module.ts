@@ -14,6 +14,8 @@ import {registerLocaleData} from "@angular/common";
 import localeFr from '@angular/common/locales/fr';
 import { AdvantagesTextPipe } from './pipes/advantages-text.pipe';
 import { EditedPhoneNumberPipe } from './pipes/edited-phone-number.pipe';
+import { CustomPricePipe } from './pipes/custom-price.pipe';
+import { ProductCountPipe } from './pipes/product-count.pipe';
 registerLocaleData(localeFr, 'fr')
 
 @NgModule({
@@ -24,7 +26,9 @@ registerLocaleData(localeFr, 'fr')
     ButtonBackgroundDirective,
     ProductPricePipe,
     AdvantagesTextPipe,
-    EditedPhoneNumberPipe
+    EditedPhoneNumberPipe,
+    CustomPricePipe,
+    ProductCountPipe
   ],
   imports: [
     BrowserModule,

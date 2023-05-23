@@ -5,7 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class AdvantagesTextPipe implements PipeTransform {
 
-  transform(string: string, limit: number) {
+  transform(string: string, limit: number): string {
     if (string.length > limit) {
       return string.slice(0, limit) + '...';
     }

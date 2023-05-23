@@ -2,18 +2,18 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {ProductsType} from "../../types/products.type";
 
 @Component({
-  selector: 'products',
+  selector: 'product',
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.scss']
 })
 export class ProductsComponent {
 
-  @Input() products!: ProductsType;
+  @Input() product!: ProductsType;
 
   @Output() addToCartEvent: EventEmitter<ProductsType> = new EventEmitter<ProductsType>();
 
   addProductToCart() {
-    this.addToCartEvent.emit(this.products);
+    this.addToCartEvent.emit(this.product);
   }
 
 }

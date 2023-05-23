@@ -22,12 +22,11 @@ export class AppComponent implements OnInit{
   hrefInstagram = 'https://google.com';
 
 
-  constructor(public productService: ProductService,
+  constructor(private productService: ProductService,
               public cartProductServices: CartProductService) {
   }
 
   ngOnInit() {
-    this.products = this.productService.getProducts()
   }
 
 
@@ -61,12 +60,21 @@ export class AppComponent implements OnInit{
   ];
 
 
+  // showPriceBlock() {
+  //   if (this.cartProductServices.count === 0) {
+  //    return this.cartProductServices.count;
+  //   }
+  // }
+
+  countNumber = this.cartProductServices.count;
+
+
   public scrollTo(target: HTMLElement): void {
     target.scrollIntoView({behavior: "smooth"});
   }
 
   public addToCart(product: ProductsType, target: HTMLElement): void {
-    this.cartProductServices.price++;
+    this.cartProductServices.price = this.cartProductServices.price + product.price;
     this.cartProductServices.count++;
     this.scrollTo(target);
     this.formValues.productTitle = product.title.toUpperCase()

@@ -85,7 +85,7 @@
   <div class="container">
     <h2>Выберите свой макарун</h2>
     <div class="products__items">
-      <products *ngFor="let product of products" [products]="product" (addToCartEvent)="addToCart($event, orderElement)"></products>
+      <product *ngFor="let product of products" [product]="product" (addToCartEvent)="addToCart($event, orderElement)"></product>
     </div>
 
   </div>
@@ -148,10 +148,10 @@
   <div class="wrapper">
     <button class="button__fixed-border">
       <img src="assets/image/cart.png" alt="present">
-    <div class="button__fixed-count">{{cartProductServices.count}}</div>
+    <div class="button__fixed-count" *ngIf="cartProductServices.count">{{cartProductServices.count}}</div>
     </button>
-    <div class="button__fixed-text">
-      {{cartProductServices.price | currency:'RU':'руб':'1.1-2':'fr'}}
+    <div class="button__fixed-text" *ngIf="cartProductServices.price">
+      {{cartProductServices.price | customPricePipe}}
     </div>
   </div>
 </div>

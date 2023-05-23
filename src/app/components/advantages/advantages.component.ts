@@ -9,7 +9,7 @@ import {AdvantagesType} from "../../types/advantages.type";
 export class AdvantagesComponent {
 
   @Input() advantages!: AdvantagesType;
-           i: number = 0;
+
 
   constructor() {
   }
